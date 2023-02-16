@@ -61,7 +61,6 @@ public class Database extends SQLiteOpenHelper {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                Log.i("Database", "Database: Starting login process");
                 boolean result = false;
                 String param[] = new String[2];
                 param[0] = username;
@@ -73,12 +72,6 @@ public class Database extends SQLiteOpenHelper {
                     result = true;
                 }
 
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                Log.i("Database", "Database: Finishing login process");
                 db.close();
 
 //              We need a final variable to be passed into post method
