@@ -67,17 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     });
 
-//                    if(db.login(username, password)) {
-//                        Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
-//                        SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor = sharedPreferences.edit();
-//                        editor.putString("username", username);
-//                        editor.apply();
-//                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-//                    }else {
-//
-//                    }
-
                 }
 
             }
