@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -93,5 +95,19 @@ public class DoctorDetailsActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listViewDoctorDetails);
         listView.setAdapter(simpleAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(DoctorDetailsActivity.this, BookAppointmentActivity.class);
+                intent.putExtra("title", title);
+                intent.putExtra("line1", doctor_details[i][0]);
+                intent.putExtra("line2", doctor_details[i][1]);
+                intent.putExtra("line3", doctor_details[i][2]);
+                intent.putExtra("line4", doctor_details[i][3]);
+                intent.putExtra("line5", doctor_details[i][4]);
+                startActivity(intent);
+            }
+        });
     }
 }
