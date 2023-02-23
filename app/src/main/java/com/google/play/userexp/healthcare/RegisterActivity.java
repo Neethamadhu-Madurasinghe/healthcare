@@ -1,21 +1,15 @@
 package com.google.play.userexp.healthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.os.HandlerCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,11 +28,11 @@ public class RegisterActivity extends AppCompatActivity {
         HealthcareApplication healthcareApp = (HealthcareApplication) getApplication();
         db = Database.getInstance(getApplicationContext(), healthcareApp.executorService, healthcareApp.mainThreadHandler);
 
-        registerUsername = findViewById(R.id.editTextRegisterUsername);
-        registerEmail = findViewById(R.id.editTextRegisterEmail);
-        registerPassword = findViewById(R.id.editTextRegisterPassword);
-        registerConfirmPassword = findViewById(R.id.editTextRegisterConfirmPassword);
-        registerUsername = findViewById(R.id.editTextRegisterUsername);
+        registerUsername = findViewById(R.id.editTextFullName);
+        registerEmail = findViewById(R.id.editTextAddress);
+        registerPassword = findViewById(R.id.editTextContactNumber);
+        registerConfirmPassword = findViewById(R.id.editTextFees);
+        registerUsername = findViewById(R.id.editTextFullName);
         registerButton = findViewById(R.id.registerButton);
         existingUser = findViewById(R.id.textViewExistingUser);
 
