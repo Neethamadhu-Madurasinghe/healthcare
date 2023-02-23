@@ -21,9 +21,10 @@ public class BookAppointmentActivity extends AppCompatActivity {
 
     EditText editText1, editText2, editText3, editText4;
     TextView title;
-    private Button dateButton, timeButton;
+    private Button dateButton, timeButton, backButton, bookButton;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
+
 
 //    This inner class here for make the date picker
 //    https://developer.android.com/develop/ui/views/components/pickers#java
@@ -81,6 +82,12 @@ public class BookAppointmentActivity extends AppCompatActivity {
         editText3 = findViewById(R.id.editTextContactNumber);
         editText4 = findViewById(R.id.editTextFees);
 
+        dateButton = findViewById(R.id.buttonAppDate);
+        timeButton = findViewById(R.id.buttonAppTime);
+
+        backButton = findViewById(R.id.buttonBack);
+        bookButton = findViewById(R.id.buttonBook);
+
 //      Make the text fields not editable !
         editText1.setKeyListener(null);
         editText2.setKeyListener(null);
@@ -100,8 +107,6 @@ public class BookAppointmentActivity extends AppCompatActivity {
         editText3.setText(contact);
         editText4.setText("Con Fees: " + payment + "/=");
 
-        dateButton = findViewById(R.id.buttonAppDate);
-        timeButton = findViewById(R.id.buttonAppTime);
         dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,6 +120,20 @@ public class BookAppointmentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DialogFragment newFragment = new TimePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "timePicker");
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BookAppointmentActivity.this, FindDoctorActivity.class));
+            }
+        });
+
+        bookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                TODO: Save data in the database
             }
         });
 

@@ -195,7 +195,7 @@
         app:layout_constraintVertical_bias="0.022" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/buttonBack"
         android:layout_width="322dp"
         android:layout_height="43dp"
         android:background="@drawable/btn_bg"
@@ -204,14 +204,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerButton2" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonBook" />
 
     <Button
-        android:id="@+id/registerButton2"
+        android:id="@+id/buttonBook"
         android:layout_width="322dp"
         android:layout_height="43dp"
         android:background="@drawable/btn_bg"
-        android:text="Register"
+        android:text="Book Appointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
